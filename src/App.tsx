@@ -1,12 +1,10 @@
-import Es1 from './esercitazioni/4-use-state-obj'
+import Es1 from './esercitazioni/6-useState-array-2'
 
 import './App.scss'
-import Navbar from './component/Navbar/Navbar'
 
 function App() {
   return (
     <>
-      <Navbar></Navbar>
       <Es1></Es1>
     </>
   )

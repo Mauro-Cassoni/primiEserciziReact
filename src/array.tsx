@@ -1,5 +1,5 @@
 export const data = [
-    {id: 1, name: 'Emilio'},
+    {id: 1, name: 'Emilio', surname: 'Plances'},
     {id: 2, name: 'Emanuele'},
     {id: 3, name: 'Marco'},
     {id: 4, name: 'Davide'},

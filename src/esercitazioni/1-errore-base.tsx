@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function erroreBase() {
+export default function ErroreBase() {
     let title = 'Vecchio titolo';
 
     const cambiaTitolo = () => {
