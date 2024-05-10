@@ -1,3 +1,11 @@
 .card {
-    
+    background-color: var(--card);
+}
+
+.undertext{
+    border-color: var(--primary);
+}
+
+.remove{
+    background-color: var(--primary);
 }
