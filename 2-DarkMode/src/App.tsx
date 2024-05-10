@@ -34,7 +34,7 @@ function App() {
 
 
   const remove = (id: number) => {
-    setPosts(cardArray.filter(p => p.id !== id))
+    setPosts(posts.filter(p => p.id !== id))
   }
 
   return (
