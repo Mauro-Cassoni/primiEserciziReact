@@ -1,4 +1,3 @@
-import React from 'react'
 import { Ibutton } from '../interfaces/iButton'
 
 export default function button({ text, onClick }: Ibutton) {

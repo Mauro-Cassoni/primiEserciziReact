@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import './App.scss'
 import Button from './components/Button';
+import Title from './components/Title';
 
-const getThemeFromLocalStorage = ():string | null => {
+const getThemeFromLocalStorage = (): string | null => {
   if (localStorage.getItem('theme')) {
     return localStorage.getItem('theme');
   } else {
@@ -13,9 +14,9 @@ const getThemeFromLocalStorage = ():string | null => {
 function App() {
 
   const [theme, setTheme] = useState(getThemeFromLocalStorage());
-  const [themeIcon, setThemeIcon] = useState('light');
+  const [themeText, setThemeText] = useState('light');
 
-  const changeTheme = ():void => {
+  const changeTheme = (): void => {
     if (theme === 'light-mode') {
       setTheme('dark-mode')
     } else {
@@ -23,11 +24,11 @@ function App() {
     }
   }
 
-  const changeIcon = ():void => {
+  const changeText = (): void => {
     if (theme === 'light-mode') {
-      setThemeIcon('LIGHT')
+      setThemeText('LIGHT')
     } else {
-      setThemeIcon('DARK')
+      setThemeText('DARK')
     }
   }
 
@@ -39,14 +40,26 @@ function App() {
   })
 
   useEffect(() => {
-    changeIcon();
+    changeText();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [theme])
 
 
   return (
     <>
-      <div>App</div>
-      <Button text={themeIcon} onClick={changeTheme}></Button>
+    <div className='text-right m-1'>
+      <Button text={themeText} onClick={changeTheme}></Button>
+    </div>
+      <div className='grid justify-center p-3 font-mono font-bold'>
+        <div>
+          <Title text={'Le Nostre Vacanze'}></Title>
+        </div>
+        <div>
+
+        </div>
+
+
+      </div>
     </>
   )
 }

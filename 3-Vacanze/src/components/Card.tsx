@@ -1,5 +1,7 @@
 export default function card() {
     return (
-        <div>card</div>
+        <div className="rounded">
+
+        </div>
     )
 }
