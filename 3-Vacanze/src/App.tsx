@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import './App.scss'
 import Button from './components/Button';
 import Title from './components/Title';
+import Holidays from './axios/Holidays';
+import { IoMdMoon, IoMdSunny } from 'react-icons/io';
 
 const getThemeFromLocalStorage = (): string | null => {
   if (localStorage.getItem('theme')) {
@@ -14,7 +16,7 @@ const getThemeFromLocalStorage = (): string | null => {
 function App() {
 
   const [theme, setTheme] = useState(getThemeFromLocalStorage());
-  const [themeText, setThemeText] = useState('light');
+  const [themeText, setThemeText] = useState(<IoMdSunny />);
 
   const changeTheme = (): void => {
     if (theme === 'light-mode') {
@@ -26,9 +28,9 @@ function App() {
 
   const changeText = (): void => {
     if (theme === 'light-mode') {
-      setThemeText('LIGHT')
+      setThemeText(<IoMdSunny />)
     } else {
-      setThemeText('DARK')
+      setThemeText(<IoMdMoon />)
     }
   }
 
@@ -46,21 +48,22 @@ function App() {
 
 
   return (
-    <>
-    <div className='text-right m-1'>
-      <Button text={themeText} onClick={changeTheme}></Button>
-    </div>
-      <div className='grid justify-center p-3 font-mono font-bold'>
+    <div className='grid justify-center'>
+      <div className='text-right m-1'>
+        <Button text={themeText} onClick={changeTheme}></Button>
+      </div>
+
+      <div className='grid justify-center text-center p-3 font-mono font-bold'>
         <div>
           <Title text={'Le Nostre Vacanze'}></Title>
         </div>
-        <div>
 
+        <div  className='w-1/2'>
+          <Holidays></Holidays>
         </div>
 
-
       </div>
-    </>
+    </div>
   )
 }
 
