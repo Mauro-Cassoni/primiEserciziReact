@@ -6,14 +6,15 @@
     --bg: #efefef;
     --text: #222;
     --primary: #decc2b;
-    --card: #eeeeee;
+    --primary-dark: #a79924;
+    --card: #877c5e;
 }
 
 .dark-mode {
     --bg: #111;
     --text: #d4d3d3;
     --primary: rgb(56, 146, 194);
-
+    --primary-dark: rgb(43, 107, 142);
     --card: #272724;
 }
 
@@ -28,8 +29,16 @@ body {
 
 .button {
     background-color: var(--primary);
+    &:hover{
+        transform: scale(1.05);
+        background-color: var(--primary-dark);
+    }
 }
 
 .myUnderline{
     background-color: var(--primary);
+}
+
+.card{
+    background-color: var(--card);
 }

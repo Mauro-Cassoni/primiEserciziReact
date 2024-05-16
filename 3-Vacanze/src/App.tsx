@@ -53,12 +53,12 @@ function App() {
         <Button text={themeText} onClick={changeTheme}></Button>
       </div>
 
-      <div className='grid justify-center text-center p-3 font-mono font-bold'>
-        <div>
+      <div className='flex flex-col justify-center text-center p-3 font-mono font-bold'>
+        <div className='mb-6'>
           <Title text={'Le Nostre Vacanze'}></Title>
         </div>
 
-        <div  className='w-1/2'>
+        <div  className='w-[50vw] mx-40 rounded-lg'>
           <Holidays></Holidays>
         </div>
 
