@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.light-mode {
+    --bg: #efefef;
+    --text: #222;
+    --primary: #de522b;
+    --primary-hover: #ff683e;
+    --card: #877c5e;
+}
+
+.dark-mode {
+    --bg: #111;
+    --text: #d4d3d3;
+    --primary: rgb(56, 146, 194);
+    --primary-hover: rgb(43, 107, 142);
+    --card: #272724;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+* {
+    color: var(--text);
+    transition: 0.5s;
+}
+
+.button {
+    background-color: var(--primary);
+    &:hover{
+        background-color: var(--primary-dark);
+    }
+}
