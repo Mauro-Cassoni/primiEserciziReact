@@ -13,7 +13,7 @@
 .dark-mode {
     --bg: #111;
     --text: #d4d3d3;
-    --primary: rgb(56, 146, 194);
+    --primary: #3892c2;
     --primary-hover: rgb(43, 107, 142);
     --card: #272724;
 }
@@ -25,4 +25,21 @@ body {
 * {
     color: var(--text);
     transition: 0.5s;
+}
+
+.next {
+    right: 0;
+    transform: translateX(150%);
+    opacity: 0;
+}
+
+.prev {
+    left: 0;
+    transform: translateX(-150%);
+    opacity: 0;
+}
+
+.active {
+    transform: translate(-50%, 0%);
+    opacity: 1;
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.scss'
 import Button from './components/Button'
 import { IoSunny, IoMoonSharp } from 'react-icons/io5';
+import Slider from './components/Slider';
 
 const getThemeFromLocalStrorage = (): string | null => {
   if (localStorage.getItem('theme')) {
@@ -52,7 +53,10 @@ function App() {
       </header>
 
       <main className='flex justify-center'>
-  
+        <div className='w-[600px] min-h-96'>
+          <Slider></Slider>
+        </div>
+
       </main>
     </>
   )
