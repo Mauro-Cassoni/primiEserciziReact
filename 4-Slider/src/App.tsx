@@ -50,6 +50,10 @@ function App() {
           className='m-1'
           onClick={changeTheme}></Button>
       </header>
+
+      <main className='flex justify-center'>
+  
+      </main>
     </>
   )
 }

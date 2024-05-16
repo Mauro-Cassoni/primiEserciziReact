@@ -26,10 +26,3 @@ body {
     color: var(--text);
     transition: 0.5s;
 }
-
-.button {
-    background-color: var(--primary);
-    &:hover{
-        background-color: var(--primary-dark);
-    }
-}
