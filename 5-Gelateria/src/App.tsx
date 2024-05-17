@@ -1,11 +1,19 @@
 import './App.scss'
 import Navbar from './components/Navbar'
+import Title from './components/Title'
 
 function App() {
 
   return (
     <>
-      <Navbar></Navbar>
+      <header>
+        <Navbar></Navbar>
+      </header>
+
+      <main>
+      <Title>Le nostre scelte</Title>
+
+      </main>
     </>
   )
 }

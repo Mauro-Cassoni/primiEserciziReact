@@ -44,9 +44,16 @@ export default function Navbar() {
     })
 
     return (
-        <div className="flex justify-between py-4 px-10">
-            <h1 className="text-4xl font-bold">Nice Cream</h1>
-            <Button onClick={changeTheme}>{themeButton}</Button>
+        <div className="flex justify-center">
+            <div className="flex justify-between py-4 w-[90vw]">
+                <h1 className="text-4xl font-bold">Nice Cream</h1>
+                <div className="h-8 w-8 bg-[var(--primary)] hover:bg-[var(--primary-hover)] rounded-full flex justify-center">
+                    <Button onClick={changeTheme}
+                        className="p-0 bg-transparent hover:bg-transparent">
+                        {themeButton}
+                    </Button>
+                </div>
+            </div>
         </div>
     )
 }
