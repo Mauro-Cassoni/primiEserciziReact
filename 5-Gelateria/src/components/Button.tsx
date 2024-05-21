@@ -1,8 +1,8 @@
-import { ReactNode } from "react"
+import React, { ReactNode } from "react"
 
 interface iButton {
     children: ReactNode;
-    onClick: () => void;
+    onClick: () => void | ReactNode;
     className?: string;
 }
 

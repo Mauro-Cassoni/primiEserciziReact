@@ -11,9 +11,11 @@ function App() {
         <Navbar></Navbar>
       </header>
 
-      <main>
+      <main  className='flex justify-center'>
+        <div  className='w-[70vw]'>
         <Title>Le nostre scelte</Title>
         <Menu></Menu>
+        </div>
       </main>
     </>
   )

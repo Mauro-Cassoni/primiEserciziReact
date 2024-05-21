@@ -13,8 +13,8 @@
 .dark-mode {
     --bg: #111;
     --primary: #019e19;
-    --primary-hover: #00db21;
-    --card: #d6f8ca;
+    --primary-hover: #02a019;
+    --card: #52674a;
     --text: #d4d3d3;
 }
 
@@ -24,5 +24,5 @@ body {
 
 * {
     color: var(--text);
-    transition: 0.5s;
+    transition: 0.7s;
 }
