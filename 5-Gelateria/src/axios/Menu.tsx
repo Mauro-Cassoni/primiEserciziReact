@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import Loading from "../components/Loading";
 import ErrorComponent from "../components/ErrorComponent";
 import { iIceCream } from "../interfaces/iIceCream";
-import Button from "../components/Button";
 import Card from "../components/Card";
 
 export default function Menu() {
@@ -21,9 +20,9 @@ export default function Menu() {
         if (category === "all") {
             setFilter(iceCreams)
         } else {
-            const filteredProducts = iceCreams.filter((el) => {
+            const filteredProducts = iceCreams.filter((el) => (
                 el.categoria === category ? el : ""
-            });
+            ));
             setFilter(filteredProducts);
         }
     }
@@ -66,7 +65,8 @@ export default function Menu() {
                 {
                     categories.map((category, index) => (
                         <button key={index} onClick={() => filterProduct(category, index)}
-                            className="uppercase text-xs">
+                            className={`uppercase text-xs px-5 py-2
+                            ${selected === index && "active"}`}>
                             {category}
                         </button>
                     ))
