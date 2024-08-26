@@ -12,7 +12,7 @@ function App() {
       </header>
 
       <main  className='flex justify-center'>
-        <div  className='w-[70vw]'>
+        <div  className='w-[70vw] max-w-[900px]'>
         <Title>Le nostre scelte</Title>
         <Menu></Menu>
         </div>
