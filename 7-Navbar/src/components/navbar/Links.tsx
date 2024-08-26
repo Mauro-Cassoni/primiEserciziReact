@@ -1,7 +1,10 @@
+interface iLinks {
+    className?: string;
+}
 
-export default function links() {
+export default function links({className}: iLinks) {
     return (
-        <ul>
+        <ul className={`${className}`}>
             <li>Home</li>
             <li>Chi siamo</li>
             <li>Progetti</li>

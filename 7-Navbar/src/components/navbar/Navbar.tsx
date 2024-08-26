@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react"
-import { IoMdMenu } from "react-icons/io";
+import { IoMdClose, IoMdMenu } from "react-icons/io";
 import Links from "./links";
+import ThemeButton from "./ThemeButton";
 
 export default function Navbar() {
 
     const [show, setShow] = useState(false);
+    const [showButton, setShowButton] = useState(<IoMdMenu />);
     const linkListRef = useRef<HTMLDivElement>(null);
     const linkContainerRef = useRef<HTMLDivElement>(null);
 
@@ -23,6 +25,14 @@ export default function Navbar() {
         }
     }, [show]);
 
+    useEffect(() => {
+        if (!show) {
+            setShowButton(<IoMdMenu />)
+        } else {
+            setShowButton(<IoMdClose />)
+        }
+    }, [show])
+
 
     return (
         <header>
@@ -30,15 +40,25 @@ export default function Navbar() {
                 <div>
                     <img src={`/vite.svg`} alt="" />
                 </div>
-                <button onClick={handleShow}>
-                    <IoMdMenu className="text-2xl " />
+
+                <Links className="hidden md:flex gap-3"></Links>
+
+                <div className="hidden md:block">
+                    <ThemeButton />
+                </div>
+
+                <button onClick={handleShow} className="md:hidden text-2xl">
+                    {showButton}
                 </button>
             </nav>
             <div ref={linkContainerRef}
-                className={`overflow-hidden transition-max-height duration-300 ease-in-out`}
+                className={`overflow-hidden transition-max-height duration-300 ease-in-out md:hidden`}
                 style={{ maxHeight: show ? `${linkListRef.current?.getBoundingClientRect().height}px` : '0px' }}>
-                <div ref={linkListRef}>
-                    <Links></Links>
+                <div ref={linkListRef} className="flex flex-col items-center gap-3 pb-5">
+                    <Links className="flex flex-col gap-3 items-center"></Links>
+                    <div>
+                        <ThemeButton />
+                    </div>
                 </div>
             </div>
         </header>
