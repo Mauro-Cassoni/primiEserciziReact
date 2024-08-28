@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.light-mode {
+    transition: 0.5s;
+    --bg: #f9f9f9;
+    --primary: #3892C2;
+    --text: #222222;
+}
+
+.dark-mode {
+    transition: 0.5s;
+    --bg: #111;
+    --primary: #019e19;
+    --text: #d4d3d3;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+* {
+    color: var(--text);
+    box-sizing: border-box;
+}

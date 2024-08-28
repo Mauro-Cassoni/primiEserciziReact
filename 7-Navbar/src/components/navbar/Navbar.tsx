@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { IoMdClose, IoMdMenu } from "react-icons/io";
-import Links from "./links";
 import ThemeButton from "./ThemeButton";
+import Links from "./Links";
 
 export default function Navbar() {
 
@@ -36,12 +36,12 @@ export default function Navbar() {
 
     return (
         <header>
-            <nav className="flex justify-between px-5 py-3">
+            <nav className="flex justify-between items-center px-5 py-3 transition duration-5000">
                 <div>
                     <img src={`/vite.svg`} alt="" />
                 </div>
 
-                <Links className="hidden md:flex gap-3"></Links>
+                <Links className="hidden md:flex gap-5"></Links>
 
                 <div className="hidden md:block">
                     <ThemeButton />

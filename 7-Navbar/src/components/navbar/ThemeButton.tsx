@@ -24,19 +24,21 @@ export default function ThemeButton() {
 
     useEffect(() => {
         if (theme === 'dark-mode') {
-            setThemeButton(<IoSunny />)
+            setThemeButton(<IoSunny />);
+            document.body.classList.add('dark-mode');
+            document.body.classList.remove('light-mode');
         } else {
-            setThemeButton(<FaMoon />)
+            setThemeButton(<FaMoon />);
+            document.body.classList.add('light-mode');
+            document.body.classList.remove('dark-mode');
         }
-    }, [theme])
+        
+        localStorage.setItem('theme', theme);
+    }, [theme]);
 
     const changeTheme = () => {
-        if (theme === 'light-mode') {
-            setTheme('dark-mode');
-        } else {
-            setTheme('light-mode');
-        }
-    }
+        setTheme(theme === 'light-mode' ? 'dark-mode' : 'light-mode');
+    };
 
     return (
         <button onClick={changeTheme}>{themeButton}</button>
